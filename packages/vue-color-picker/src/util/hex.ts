@@ -1,5 +1,4 @@
-import { IRgba } from "../types"
-
+import { IRgba } from '../types'
 
 export function rgb2hex({ r, g, b }: IRgba, toUpper: boolean) {
   const change = (val: number) => ('0' + Number(val).toString(16)).slice(-2)

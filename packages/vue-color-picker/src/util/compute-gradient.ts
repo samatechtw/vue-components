@@ -1,5 +1,4 @@
-import { GradientType, IGradientColor, IThemedGradient } from "../types"
-
+import { GradientType, IGradientColor, IThemedGradient } from '../types'
 
 export const computeGradient = (
   gradientType: GradientType,

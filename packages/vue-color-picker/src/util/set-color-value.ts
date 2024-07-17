@@ -1,6 +1,6 @@
-import { IRgba } from "../types"
-import { colorCodeToRgbaString, rgb2hsv, rgb2rgba } from "./color"
-import { hex2rgb } from "./hex"
+import { IRgba } from '../types'
+import { colorCodeToRgbaString, rgb2hsv, rgb2rgba } from './color'
+import { hex2rgb } from './hex'
 
 export function setColorValue(color: string | IRgba) {
   let rgba: IRgba = { r: 0, g: 0, b: 0, a: 1 }

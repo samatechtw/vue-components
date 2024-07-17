@@ -1,5 +1,4 @@
-import { IPickerColor, IRgba } from "../types"
-
+import { IPickerColor, IRgba } from '../types'
 
 export function rgb2rgba(rgba: string): IRgba {
   const rgbaArr = (/rgba?\((.*?)\)/.exec(rgba) || ['', '0,0,0,1'])[1].split(',')
