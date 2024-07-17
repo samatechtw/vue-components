@@ -1,6 +1,6 @@
 {
   "name": "@samatech/vue-color-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for Vue color picker",
   "type": "module",
   "main": "dist/vue-color-picker.es.js",
