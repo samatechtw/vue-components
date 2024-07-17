@@ -7,6 +7,7 @@
     "format": "prettier -w \"{**/*,*}.{ts,js,json}\"",
     "format:check": "prettier --check \"{**/*,*}.{ts,js,json}\"",
     "build:lib": "pnpm --filter '@samatech/vue-color-picker' run build",
+    "build:demo": "pnpm --filter 'vue-color-picker-demo' run build",
     "lint": "eslint --ext .js,.ts ."
   },
   "keywords": [],
