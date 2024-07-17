@@ -1,0 +1,41 @@
+{
+  "name": "@samatech/vue-color-picker",
+  "version": "1.0.0",
+  "description": "Library for Vue color picker",
+  "type": "module",
+  "main": "dist/vue-color-picker.es.js",
+  "module": "dist/vue-color-picker.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-color-picker.es.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css"
+    }
+  },
+  "types": "dist/index.d.mts.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samatechtw/vue-color-picker.git"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.4.31"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "postcss": "^8.4.39",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}

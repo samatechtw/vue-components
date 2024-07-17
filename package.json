@@ -1,0 +1,15 @@
+{
+  "name": "vue-color-picker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "demo": "pnpm --filter '*demo' run dev",
+    "format": "prettier -w \"{**/*,*}.{ts,js,json}\"",
+    "format:check": "prettier --check \"{**/*,*}.{ts,js,json}\"",
+    "build:lib": "pnpm --filter '@samatech/vue-color-picker' run build",
+    "lint": "eslint --ext .js,.ts ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

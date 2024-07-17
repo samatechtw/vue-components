@@ -1,0 +1,18 @@
+name: Environment Setup
+description: 'Setup PNPM and Node'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9.5.0
+    - name: Set up NodeJS v20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        registry-url: 'https://registry.npmjs.org'
+        cache: 'pnpm'
+    - name: Install npm modules
+      shell: bash
+      run: pnpm install --ignore-scripts --frozen-lockfile
