@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build": "npm run build:lib",
     "demo": "pnpm --filter '*demo' run dev",
     "format": "prettier -w \"{**/*,*}.{ts,js,json}\"",
     "format:check": "prettier --check \"{**/*,*}.{ts,js,json}\"",
