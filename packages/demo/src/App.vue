@@ -13,7 +13,8 @@
       />
     </div>
     <div class="footer" :class="{ light: isLight }">
-      © SamaTech 2024. All rights reserved.
+      © SamaTech 2024. All rights reserved. Hosted on
+      <a target="_blank" href="https://pubstud.io">PubStudio</a>
     </div>
   </div>
 </template>
@@ -92,7 +93,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: #f8f5f0;
-  color: $color-primary;
 }
 html *,
 body * {
@@ -110,8 +110,8 @@ p {
 }
 
 a {
-  text-decoration: none;
   color: unset;
+  text-decoration: underline;
 }
 
 .noscroll {
