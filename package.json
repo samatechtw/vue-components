@@ -14,7 +14,7 @@
     "build:demo": "pnpm --filter 'vue-components-demo' run build",
     "build": "pnpm --filter '@samatech/*' run build",
     "lint": "eslint --ext .js,.ts .",
-    "release": "cd packages/vue-components && node scripts/release.cjs"
+    "release": "cd packages/components && node scripts/release.cjs"
   },
   "keywords": [],
   "author": "",
