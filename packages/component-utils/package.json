@@ -1,0 +1,41 @@
+{
+  "name": "@samatech/component-utils",
+  "version": "1.0.0",
+  "description": "Utilities shared between components",
+  "type": "module",
+  "main": "dist/component-utils.es.js",
+  "module": "dist/component-utils.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/component-utils.es.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css"
+    }
+  },
+  "types": "dist/index.d.mts.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samatechtw/vue-components.git"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "catalog:",
+    "@floating-ui/vue": "catalog:"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}

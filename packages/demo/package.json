@@ -1,5 +1,5 @@
 {
-  "name": "vue-color-picker-demo",
+  "name": "vue-components-demo",
   "version": "1.0.0",
   "description": "Demo web app for Vue color picker widget",
   "main": "index.js",
@@ -12,16 +12,16 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "vue": "^3.4.31",
-    "@samatech/vue-color-picker": "workspace:*"
+    "vue": "catalog:",
+    "@samatech/vue-components": "workspace:*"
   },
   "devDependencies": {
-    "@laynezh/vite-plugin-lib-assets": "^0.5.23",
-    "@rollup/plugin-terser": "0.4.4",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "postcss": "^8.4.39",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.4",
-    "vite-plugin-css-injected-by-js": "^3.5.1"
+    "@laynezh/vite-plugin-lib-assets": "catalog:",
+    "vite-plugin-css-injected-by-js": "catalog:",
+    "@rollup/plugin-terser": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "postcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
   }
 }

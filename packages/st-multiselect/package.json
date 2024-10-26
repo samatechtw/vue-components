@@ -1,0 +1,47 @@
+{
+  "name": "@samatech/st-multiselect",
+  "version": "1.0.0",
+  "description": "SamaTech Vue multiselect widget",
+  "type": "module",
+  "main": "dist/st-multiselect.es.js",
+  "module": "dist/st-multiselect.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/st-multiselect.es.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css"
+    }
+  },
+  "types": "dist/index.d.mts.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samatechtw/vue-components.git"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "catalog:",
+    "@floating-ui/vue": "catalog:",
+    "@samatech/st-input": "workspace:*",
+    "@samatech/component-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "postcss": "catalog:",
+    "postcss-mixins": "catalog:",
+    "postcss-nested": "catalog:",
+    "postcss-simple-vars": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}

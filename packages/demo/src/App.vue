@@ -1,18 +1,32 @@
 <template>
-  <div class="color-picker-demo" :style="{ background }">
+  <div class="vue-components-demo">
+    <h1 class="title">Vue Components Demo</h1>
+    <div class="text">@samatech/vue-components</div>
     <div class="content-wrap">
-      <ColorPicker
-        :color="selectedColor"
-        :gradient="selectedGradient"
-        :forceNonGradient="false"
-        :selectedThemeColors="themeColors"
-        class="demo-picker"
-        @selectColor="selectColor"
-        @update="update"
-        @applyGradient="applyGradient"
+      <STMultiselect
+        :value="selected"
+        :options="options"
+        placeholder="Options"
+        class="multiselect"
+        @select="selected = $event"
       />
+      <STInput
+        v-model="text"
+        class="my-input"
+        name="my-input"
+        placeholder="My Input"
+        :clearable="true"
+      />
+      <div class="values">
+        <div class="multiselect-value">
+          {{ selected ?? 'No selection' }}
+        </div>
+        <div class="input-value">
+          {{ text }}
+        </div>
+      </div>
     </div>
-    <div class="footer" :class="{ light: isLight }">
+    <div class="footer">
       © SamaTech 2024. All rights reserved. Hosted on
       <a target="_blank" href="https://pubstud.io">PubStudio</a>
     </div>
@@ -20,71 +34,21 @@
 </template>
 
 <script setup lang="ts">
-import {
-  ColorPicker,
-  IPickerColor,
-  IThemedGradient,
-  IThemeColor,
-  IRgba,
-} from '@samatech/vue-color-picker'
-import '@samatech/vue-color-picker/dist/style.css'
 import { computed, ref } from 'vue'
+import { STMultiselect, STInput } from '@samatech/vue-components'
+import '@samatech/vue-components/dist/style.css'
 
-const selectedColor = ref<string | undefined>()
-const selectedGradient = ref()
-const themeColors = ref<IThemeColor[]>([])
-const isLight = ref(true)
+import '@samatech/vue-components/dist/style.css'
 
-const background = computed(() => {
-  return selectedColor.value ?? selectedGradient.value ?? '#f8f5f0'
-})
+const selected = ref()
+const text = ref('')
 
-const getRgba = (color: IPickerColor | undefined) => {
-  if (color) {
-    const { r, g, b, a } = color.rgba
-    return `rgba(${r}, ${g}, ${b}, ${a})`
-  }
-  return undefined
-}
-
-const checkLight = (rgba: IRgba) => {
-  const { r, g, b } = rgba
-  const a = 765 - (rgba.a ?? 1) * 765
-  isLight.value = r + g + b + a > 280
-}
-
-const update = (color: IPickerColor | IThemedGradient | undefined) => {
-  if (color && 'raw' in color) {
-    selectedGradient.value = color.raw
-    selectedColor.value = undefined
-  } else {
-    selectedColor.value = getRgba(color)
-    selectedGradient.value = undefined
-    if (color) {
-      checkLight(color.rgba)
-    }
-  }
-}
-
-const addThemeColor = (color: string | undefined) => {
-  if (color && !themeColors.value.find((c) => c.key === color)) {
-    themeColors.value.push({ key: color, value: color })
-  }
-}
-
-const selectColor = (color: IPickerColor | undefined) => {
-  selectedColor.value = getRgba(color)
-  selectedGradient.value = undefined
-  addThemeColor(selectedColor.value)
-}
-
-const applyGradient = (gradient: IThemedGradient | undefined) => {
-  selectedGradient.value = gradient?.raw
-  selectedColor.value = undefined
-}
+const options = ['Option1', 'Option2', 'Option3']
 </script>
 
 <style lang="postcss">
+@import '/node_modules/@samatech/vue-components/dist/style.css';
+
 html,
 body {
   font-family: Helvetica, sans-serif;
@@ -103,6 +67,7 @@ h1 {
   font-family: Helvetica, sans-serif;
   font-weight: 600;
   font-size: 32px;
+  margin-top: 80px;
 }
 
 p {
@@ -118,24 +83,27 @@ a {
   overflow: hidden;
 }
 
-.color-picker-demo {
+.vue-components-demo {
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-}
-.picker-demo {
-  position: relative;
+  text-align: center;
 }
 
 .content-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 64px auto 0;
   min-height: 100vh;
+}
+.values {
+  margin-top: 24px;
+}
+.my-input {
+  margin-top: 16px;
 }
 
 .footer {
@@ -143,8 +111,5 @@ a {
   padding: 12px 0 8px;
   margin: auto auto 0;
   color: white;
-}
-.footer.light {
-  color: black;
 }
 </style>

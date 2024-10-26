@@ -1,0 +1,49 @@
+{
+  "name": "@samatech/vue-components-export",
+  "version": "1.0.0",
+  "description": "Self-contained export for @samatech/vue-components",
+  "type": "module",
+  "main": "dist/vue-components-export.es.js",
+  "module": "dist/vue-components-export.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-components.es.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css"
+    }
+  },
+  "types": "dist/index.d.mts.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samatechtw/vue-components.git"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "catalog:",
+    "@samatech/st-input": "workspace:*",
+    "@samatech/st-multiselect": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@laynezh/vite-plugin-lib-assets": "catalog:",
+    "vite-plugin-css-injected-by-js": "catalog:",
+    "@rollup/plugin-terser": "catalog:",
+    "postcss": "catalog:",
+    "postcss-mixins": "catalog:",
+    "postcss-nested": "catalog:",
+    "postcss-simple-vars": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}

@@ -1,6 +1,0 @@
-export * from './color'
-export * from './create-alpha-square'
-export * from './gradient'
-export * from './hex'
-export * from './set-color-value'
-export * from './compute-gradient'

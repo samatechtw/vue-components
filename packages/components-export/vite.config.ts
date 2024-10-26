@@ -7,7 +7,7 @@ import { defineConfig } from 'vite'
 
 const resolve = (p: string): string => path.resolve(__dirname, p)
 
-const outputName = 'vue-components-demo.es.js'
+const outputName = 'vue-components-export.es.js'
 
 const externalVue = (bundleName) => {
   return {
@@ -33,7 +33,7 @@ export default defineConfig({
   plugins: [
     Vue(),
     libAssetsPlugin({
-      limit: 1024 * 4,
+      limit: 1024 * 200,
       include: /\.(pdf|jpg|jpeg|png|webm|mp4|svg|ttf|woff|woff2|wasm)$/,
     }),
     cssInjectedByJsPlugin(),
@@ -42,6 +42,9 @@ export default defineConfig({
   worker: {
     format: 'es',
   },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  },
   build: {
     outDir: './dist',
     emptyOutDir: true,
@@ -49,8 +52,8 @@ export default defineConfig({
     minify: true,
     lib: {
       formats: ['es'],
-      entry: [resolve('./src/index-export.ts')],
-      name: 'vue-components-demo',
+      entry: [resolve('./src/index.ts')],
+      name: 'vue-components-export',
       fileName: () => outputName,
     },
     rollupOptions: {

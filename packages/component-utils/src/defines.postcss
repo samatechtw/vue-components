@@ -1,0 +1,34 @@
+$color-light1: #5d99b6;
+$color-light2: #a69cd4;
+
+$font-title: 'Mulish', Helvetica, sans-serif;
+$font-text: 'Mulish', Helvetica, sans-serif;
+
+$grey-100: #f8f5f0;
+$grey-200: #e4e3e6;
+$grey-300: #d7d7db;
+$grey-500: #a1a1aa;
+$grey-700: #606470;
+
+$color-disabled: $grey-500;
+
+$color-error: #ef4444;
+$color-error-bg: #fff5f5;
+$color-error-border: #ff6565;
+$color-error-light: #cc0000;
+
+$color-title: #070028;
+$color-text: black;
+$color-primary: #2a17d6;
+
+@define-mixin title-thin $size {
+  font-family: var(--st-component-title, $font-title);
+  font-weight: 300;
+  font-size: $size;
+}
+
+@define-mixin text-medium $size {
+  font-family: var(--st-component-text, $font-text);
+  font-weight: 500;
+  font-size: $size;
+}

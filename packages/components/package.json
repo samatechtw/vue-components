@@ -1,0 +1,46 @@
+{
+  "name": "@samatech/vue-components",
+  "version": "1.0.0",
+  "description": "SamaTech Vue component library: @samatech/vue-components",
+  "type": "module",
+  "main": "dist/vue-components.es.js",
+  "module": "dist/vue-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-components.es.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css"
+    }
+  },
+  "types": "dist/index.d.mts.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samatechtw/vue-components.git"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "catalog:",
+    "@samatech/st-input": "workspace:*",
+    "@samatech/st-multiselect": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "postcss": "catalog:",
+    "postcss-mixins": "catalog:",
+    "postcss-nested": "catalog:",
+    "postcss-simple-vars": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}
