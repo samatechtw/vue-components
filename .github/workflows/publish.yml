@@ -10,6 +10,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
       - uses: ./.github/actions/env-setup
       - run: npm run build
       - run: cd packages/components && pnpm publish --access public
