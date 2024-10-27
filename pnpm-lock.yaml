@@ -84,6 +84,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@samatech/component-utils':
+        specifier: workspace:*
+        version: link:../component-utils
       '@samatech/st-input':
         specifier: workspace:*
         version: link:../st-input

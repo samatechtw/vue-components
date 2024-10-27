@@ -30,12 +30,14 @@
   "license": "MIT",
   "bundleDependencies": [
     "@samatech/st-input",
-    "@samatech/st-multiselect"
+    "@samatech/st-multiselect",
+    "@samatech/component-utils"
   ],
   "dependencies": {
     "vue": "catalog:",
     "@samatech/st-input": "workspace:*",
-    "@samatech/st-multiselect": "workspace:*"
+    "@samatech/st-multiselect": "workspace:*",
+    "@samatech/component-utils": "workspace:*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "catalog:",
