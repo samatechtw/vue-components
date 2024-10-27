@@ -28,6 +28,10 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "bundleDependencies": [
+    "@samatech/st-input",
+    "@samatech/st-multiselect"
+  ],
   "dependencies": {
     "vue": "catalog:",
     "@samatech/st-input": "workspace:*",
