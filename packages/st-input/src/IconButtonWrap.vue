@@ -26,7 +26,7 @@ const emit = defineEmits<{
 }>()
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 @import '../../component-utils/src/defines.postcss';
 
 .icon-button-wrap {

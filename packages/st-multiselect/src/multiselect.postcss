@@ -2,7 +2,6 @@
 
 $padding-x: 8px;
 
-.multiselect,
 .st-multiselect {
   font-family: $font-text;
   color: $color-text;
@@ -19,26 +18,14 @@ $padding-x: 8px;
   --ms-option-bg-pointed: $color-light2;
   --ms-option-bg-selected-pointed: $color-light1;
   --ms-ring-color: rgba($color-light1, 0.2);
-  .multiselect-clear > .multiselect-clear-icon {
-    background-color: $color-disabled;
-  }
-  .multiselect-single-label {
-    color: $grey-500;
-  }
-  .multiselect-single-label,
-  .multiselect-search {
-    padding-right: 32px;
-    width: 100%;
-    padding-left: 10px;
-  }
-  .label {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    padding: 4px $padding-x;
-    align-items: center;
-    justify-content: space-between;
-  }
+}
+.st-ms-label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 4px $padding-x;
+  align-items: center;
+  justify-content: space-between;
 }
 .ms-item {
   width: 100%;

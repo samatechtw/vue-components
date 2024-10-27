@@ -158,7 +158,7 @@ const clear = () => {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 @import '../../component-utils/src/defines.postcss';
 
 .st-input-wrap {
@@ -277,11 +277,6 @@ const clear = () => {
   }
 }
 
-textarea.st-input {
-  height: auto;
-  padding: 8px;
-}
-
 .st-input-prefix {
   @mixin text-medium 16px;
   color: $color-text;
@@ -298,16 +293,12 @@ textarea.st-input {
   right: 12px;
 }
 
-:deep(.icon-button-wrap) {
+.st-input .icon-button-wrap {
   width: 20px;
   height: 20px;
   position: absolute;
   top: 9px;
   right: 4px;
-}
-
-.bo {
-  border: 1px solid red;
 }
 
 @media (max-width: 680px) {

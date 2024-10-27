@@ -2,13 +2,13 @@
   <div
     ref="multiselectRef"
     class="st-multiselect"
-    :class="{ disabled }"
+    :class="{ 'st-ms-disabled': disabled }"
     :data-toggle-id="dataToggleId"
     @click="toggleDropdown"
   >
     <div
       :ref="setToggleRef"
-      class="label"
+      class="st-ms-label"
       @mouseenter="tooltipMouseEnter"
       @mouseleave="tooltipMouseLeave"
     >
@@ -18,7 +18,7 @@
         :modelValue="search"
         :isDisabled="disabled"
         name="search"
-        class="search"
+        class="st-ms-search"
         type="search"
         autocomplete="off"
         @update:modelValue="updateSearch"
@@ -26,24 +26,24 @@
         @keydown="handleKeydown"
         @click.stop="toggleDropdown"
       />
-      <div v-else-if="forceLabel ?? label" class="label-text">
+      <div v-else-if="forceLabel ?? label" class="st-ms-label-text">
         {{ forceLabel ?? label }}
       </div>
-      <div v-else class="placeholder">
+      <div v-else class="st-ms-placeholder">
         {{ placeholder ?? '' }}
       </div>
-      <div v-if="clearable && value" class="clear" @click.stop="clear">
-        <Cross class="clear-icon" />
+      <div v-if="clearable && value" class="st-ms-clear" @click.stop="clear">
+        <Cross class="st-ms-clear-icon" />
       </div>
-      <div v-if="caret" class="caret" :class="{ opened }"></div>
+      <div v-if="caret" class="st-ms-caret" :class="{ opened }"></div>
     </div>
-    <Transition name="slide">
-      <div v-show="opened" ref="menuRef" class="dropdown" :style="menuStyle">
+    <Transition name="st-ms-slide">
+      <div v-show="opened" ref="menuRef" class="st-ms-dropdown" :style="menuStyle">
         <div
           v-for="(l, index) in labels"
           :key="(l ?? index).toString()"
           class="ms-item"
-          :class="{ highlight: searchActive && index === searchIndex }"
+          :class="{ 'st-highlight': searchActive && index === searchIndex }"
           @click="select(index)"
         >
           <slot v-if="customLabel" :label="l" :index="index"></slot>
@@ -357,7 +357,7 @@ onMounted(() => {
 defineExpose({ multiselectRef, toggleDropdown })
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 @import './multiselect.postcss';
 
 $font-title: 'Mulish', Helvetica, sans-serif;
@@ -370,50 +370,48 @@ $font-text: 'Mulish', Helvetica, sans-serif;
   background: var(--ms-bg);
   cursor: pointer;
   border: var(--ms-border-width, 1px) solid var(--ms-border-color, #d1d5db);
-
-  .ms-item.no-options {
-    font-family: var(--st-component-text, $font-title);
-    font-weight: 400;
-    font-size: 12px;
-    padding: 6px 8px;
-  }
 }
-.highlight {
+.ms-item.no-options {
+  font-family: var(--st-component-text, $font-title);
+  font-weight: 400;
+  font-size: 12px;
+  padding: 6px 8px;
+}
+.st-highlight {
   background-color: var(--ms-color-multiselect, #e6f3fe);
 }
-.disabled {
+.st-ms-disabled {
   opacity: 0.6;
   cursor: initial;
   user-select: none;
 }
-.search {
+.st-ms-search {
   height: 100%;
   :deep(.st-input) {
     border: none;
     padding: 0;
     height: 100%;
-    background: white;
   }
 }
-.label-text,
-.placeholder {
+.st-ms-label-text,
+.st-ms-placeholder {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.placeholder {
+.st-ms-placeholder {
   color: var(--ms-placeholder-color);
 }
-.clear {
+.st-ms-clear {
   margin-left: auto;
 }
-.clear-icon {
+.st-ms-clear-icon {
   display: flex;
   align-items: center;
   width: 13px;
   height: 13px;
 }
-.caret {
+.st-ms-caret {
   font-size: var(--ms-font-size, 1rem);
   cursor: pointer;
   width: 0.625rem;
@@ -433,7 +431,7 @@ $font-text: 'Mulish', Helvetica, sans-serif;
     transform: rotate(180deg);
   }
 }
-.dropdown {
+.st-ms-dropdown {
   position: absolute;
   max-height: 300px;
   overflow-y: auto;
@@ -462,8 +460,8 @@ $font-text: 'Mulish', Helvetica, sans-serif;
   max-width: 220px;
 }
 
-.slide-enter-from,
-.slide-leave-to {
+.st-ms-slide-enter-from,
+.st-ms-slide-leave-to {
   transform: scaleY(0);
 }
 </style>

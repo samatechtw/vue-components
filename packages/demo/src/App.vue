@@ -4,11 +4,12 @@
     <div class="text">@samatech/vue-components</div>
     <div class="content-wrap">
       <STMultiselect
+        v-if="!deleteSelect"
         :value="selected"
         :options="options"
         placeholder="Options"
         class="multiselect"
-        @select="selected = $event"
+        @select="select"
       />
       <STInput
         v-model="text"
@@ -42,8 +43,15 @@ import '@samatech/vue-components/dist/style.css'
 
 const selected = ref()
 const text = ref('')
+const deleteSelect = ref(false)
 
-const options = ['Option1', 'Option2', 'Option3']
+const options = ['Option1', 'Option2', 'Option3', 'Delete']
+
+const select = (option: string | undefined) => {
+  if (option === 'Delete') {
+    deleteSelect.value = true
+  }
+}
 </script>
 
 <style lang="postcss">

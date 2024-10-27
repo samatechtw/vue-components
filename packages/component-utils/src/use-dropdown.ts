@@ -110,6 +110,10 @@ export const useDropdown = (options: IUseDropdownOptions): IUseDropdown => {
   }
 
   const updateMenuPosition = async () => {
+    // Workaround for when updateMenuPosition gets called after a ref has been removed
+    if (toggleRef.value === null || menuRef.value === null) {
+      return
+    }
     const { x, y } = await computePosition(toggleRef.value, menuRef.value, {
       placement,
       middleware: [flip(), shift(), offsetMiddleware(offset), ...(middlewares ?? [])],
