@@ -1,4 +1,4 @@
-export type ClickawayCallback = (event: Event) => void
+export type ClickawayCallback = (event?: Event) => void
 
 export const createClickawayListener = (
   ignoreElementsSelector: string,

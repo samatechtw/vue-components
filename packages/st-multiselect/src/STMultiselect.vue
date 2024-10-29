@@ -370,6 +370,14 @@ $font-text: 'Mulish', Helvetica, sans-serif;
   background: var(--ms-bg);
   cursor: pointer;
   border: var(--ms-border-width, 1px) solid var(--ms-border-color, #d1d5db);
+  .st-ms-search {
+    height: 100%;
+    .st-input {
+      border: none;
+      padding: 0;
+      height: 100%;
+    }
+  }
 }
 .ms-item.no-options {
   font-family: var(--st-component-text, $font-title);
@@ -384,14 +392,6 @@ $font-text: 'Mulish', Helvetica, sans-serif;
   opacity: 0.6;
   cursor: initial;
   user-select: none;
-}
-.st-ms-search {
-  height: 100%;
-  :deep(.st-input) {
-    border: none;
-    padding: 0;
-    height: 100%;
-  }
 }
 .st-ms-label-text,
 .st-ms-placeholder {
