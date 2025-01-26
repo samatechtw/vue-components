@@ -1,6 +1,5 @@
 import Vue from '@vitejs/plugin-vue'
 import path from 'path'
-import terser from '@rollup/plugin-terser'
 import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import { defineConfig } from 'vite'
@@ -46,7 +45,7 @@ export default defineConfig({
     outDir: './dist',
     emptyOutDir: true,
     sourcemap: true,
-    minify: true,
+    minify: 'terser',
     lib: {
       formats: ['es'],
       entry: [resolve('./src/index-export.ts')],
@@ -56,7 +55,6 @@ export default defineConfig({
     rollupOptions: {
       // externalize deps that shouldn't be bundled
       external: ['vue'],
-      plugins: [terser()],
       output: {
         format: 'es',
         dir: 'dist',

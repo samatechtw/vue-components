@@ -66,7 +66,7 @@
         v-if="tooltip && !opened && showTooltip"
         ref="tooltipRef"
         class="multiselect-tooltip"
-        :style="{ ...tooltipStyle }"
+        :style="tooltipStyle"
       >
         {{ tooltip }}
       </div>
