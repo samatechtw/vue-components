@@ -18,7 +18,7 @@
   "devDependencies": {
     "@laynezh/vite-plugin-lib-assets": "catalog:",
     "vite-plugin-css-injected-by-js": "catalog:",
-    "@rollup/plugin-terser": "catalog:",
+    "terser": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "postcss": "catalog:",
     "typescript": "catalog:",

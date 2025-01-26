@@ -37,7 +37,7 @@
     "@vitejs/plugin-vue": "catalog:",
     "@laynezh/vite-plugin-lib-assets": "catalog:",
     "vite-plugin-css-injected-by-js": "catalog:",
-    "@rollup/plugin-terser": "catalog:",
+    "terser": "catalog:",
     "postcss": "catalog:",
     "postcss-mixins": "catalog:",
     "postcss-nested": "catalog:",
