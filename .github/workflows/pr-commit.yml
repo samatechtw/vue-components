@@ -48,7 +48,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/env-setup
-      - name: Build library
-        run: pnpm run build:lib
+      - name: Build libraries
+        run: pnpm run build
       - name: Build demo
         run: pnpm run build:demo

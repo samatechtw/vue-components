@@ -30,6 +30,11 @@ export default defineConfig({
       output: {
         format: 'es',
         dir: 'dist',
+        assetFileNames: (assetInfo) => {
+          console.log('NAEM', assetInfo.names)
+          if (assetInfo.names[0] == 'vue-components.css') return 'style.css'
+          return assetInfo.names[0]
+        },
       },
     },
   },
