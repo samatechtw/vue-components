@@ -106,7 +106,7 @@ const props = withDefaults(
     // TODO -- should we automatically filter out the selected value from options instead?
     forceLabel?: string
     // TODO -- implement multiple selection via array
-    value: string | undefined
+    value: string | null | undefined
     labelKey?: string
     valueKey?: string
     placeholder?: string
