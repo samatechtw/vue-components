@@ -186,6 +186,15 @@ importers:
       postcss:
         specifier: 'catalog:'
         version: 8.5.1
+      postcss-mixins:
+        specifier: 'catalog:'
+        version: 11.0.3(postcss@8.5.1)
+      postcss-nested:
+        specifier: 'catalog:'
+        version: 7.0.2(postcss@8.5.1)
+      postcss-simple-vars:
+        specifier: 'catalog:'
+        version: 7.0.1(postcss@8.5.1)
       terser:
         specifier: 'catalog:'
         version: 5.37.0

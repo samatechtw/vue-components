@@ -277,6 +277,12 @@ const clear = () => {
   }
 }
 
+.clear-button-wrap {
+  position: absolute;
+  top: 28%;
+  right: 8px;
+}
+
 .st-input-prefix {
   @mixin text-medium 16px;
   color: $color-text;

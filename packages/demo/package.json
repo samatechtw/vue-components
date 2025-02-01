@@ -21,6 +21,9 @@
     "terser": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "postcss": "catalog:",
+    "postcss-mixins": "catalog:",
+    "postcss-nested": "catalog:",
+    "postcss-simple-vars": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:"
   }
