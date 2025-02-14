@@ -398,6 +398,7 @@ $font-text: 'Mulish', Helvetica, sans-serif;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  user-select: none;
 }
 .st-ms-placeholder {
   color: var(--ms-placeholder-color);
