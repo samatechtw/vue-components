@@ -1,11 +1,11 @@
 <template>
   <div class="st-progressbar-wrap" :class="{ dragging: !!dragData }" :id="id">
-    <div class="st-progressbar">
+    <div class="st-progressbar" @mousedown="clickBar($event, value)">
       <div
         class="progress-line"
         :style="{ width: `${calculatedPercent}%`, height: `${height}px` }"
       >
-        <div class="progress-tooltip" @mousedown="startDrag($event, value)">
+        <div class="progress-tooltip" @mousedown.stop="startDrag($event, value)">
           <span class="percent-value">{{ Math.round(value) }}</span>
           <span v-if="showPercent" class="percent-label">%</span>
         </div>
@@ -24,32 +24,34 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onUnmounted } from 'vue'
+import { computed, onUnmounted, toRefs } from 'vue'
 import { useProgressBar } from './use-progressbar'
 
-const {
-  id,
-  value,
-  min = 0,
-  max = 100,
-  step = 1,
-  height = 4,
-  showPercent = true,
-} = defineProps<{
-  id: string
-  value: number
-  min?: number
-  max?: number
-  step?: number
-  showPercent?: boolean
-  height: number
-}>()
+const props = withDefaults(
+  defineProps<{
+    id: string
+    value: number
+    min?: number
+    max?: number
+    step?: number
+    showPercent?: boolean
+    height?: number
+  }>(),
+  {
+    min: 0,
+    max: 100,
+    step: 1,
+    height: 4,
+    showPercent: true,
+  },
+)
+const { id, value, min, max, step, showPercent } = toRefs(props)
 
 const emit = defineEmits<{
   (e: 'change', value: number): void
 }>()
 
-const { dragData, startDrag, stopDrag } = useProgressBar({
+const { dragData, clickBar, startDrag, stopDrag } = useProgressBar({
   id,
   min,
   max,
@@ -60,11 +62,11 @@ const { dragData, startDrag, stopDrag } = useProgressBar({
 })
 
 const p = (val: number): string => {
-  return showPercent ? `${val}%` : val.toString()
+  return showPercent.value ? `${val}%` : val.toString()
 }
 
 const calculatedPercent = computed(() => {
-  return 100 * ((value - min) / (max - min))
+  return 100 * ((value.value - min.value) / (max.value - min.value))
 })
 
 onUnmounted(() => {
@@ -81,6 +83,7 @@ onUnmounted(() => {
 .st-progressbar {
   width: 100%;
   background-color: var(--progress-background, $grey-200);
+  cursor: pointer;
 }
 
 .progress-line {
@@ -140,6 +143,7 @@ onUnmounted(() => {
   font-family: var(--st-component-title, $font-title);
   font-size: 15px;
   position: relative;
+  user-select: none;
 }
 .min {
   margin-left: -2px;
