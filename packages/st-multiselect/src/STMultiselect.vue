@@ -380,7 +380,7 @@ $font-text: 'Mulish', Helvetica, sans-serif;
   }
 }
 .ms-item.no-options {
-  font-family: var(--st-component-text, $font-title);
+  font-family: var(--st-component-title, $font-title);
   font-weight: 400;
   font-size: 12px;
   padding: 6px 8px;

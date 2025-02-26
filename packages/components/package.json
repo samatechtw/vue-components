@@ -31,12 +31,14 @@
   "bundleDependencies": [
     "@samatech/st-input",
     "@samatech/st-multiselect",
+    "@samatech/st-progressbar",
     "@samatech/component-utils"
   ],
   "dependencies": {
     "vue": "catalog:",
     "@samatech/st-input": "workspace:*",
     "@samatech/st-multiselect": "workspace:*",
+    "@samatech/st-progressbar": "workspace:*",
     "@samatech/component-utils": "workspace:*"
   },
   "devDependencies": {

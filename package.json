@@ -9,6 +9,7 @@
     "build:utils": "pnpm --filter '@samatech/component-utils' run build",
     "build:input": "pnpm --filter '@samatech/st-input' run build",
     "build:multiselect": "pnpm --filter '@samatech/st-multiselect' run build",
+    "build:progressbar": "pnpm --filter '@samatech/st-progressbar' run build",
     "build:lib": "pnpm --filter '@samatech/vue-components' run build",
     "build:export": "pnpm --filter '@samatech/vue-components-export' run build",
     "build:demo": "pnpm --filter 'vue-components-demo' run build",

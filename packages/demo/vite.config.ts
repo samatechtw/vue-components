@@ -41,6 +41,12 @@ export default defineConfig({
   worker: {
     format: 'es',
   },
+  resolve: {
+    alias: {
+      // Use for testing without re-bundling component lib
+      '@local': resolve('../st-progressbar/src'),
+    },
+  },
   build: {
     outDir: './dist',
     emptyOutDir: true,
