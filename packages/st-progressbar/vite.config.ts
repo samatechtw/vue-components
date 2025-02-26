@@ -5,7 +5,7 @@ import dts from 'vite-plugin-dts'
 
 const resolve = (p: string): string => path.resolve(__dirname, p)
 
-const outputName = 'vue-components.es.js'
+const outputName = 'st-progressbar.es.js'
 
 export default defineConfig({
   assetsInclude: /\.(pdf|jpg|png|webm|mp4|svg|wasm)$/,
@@ -21,7 +21,7 @@ export default defineConfig({
     lib: {
       formats: ['es'],
       entry: [resolve('./src/index.ts')],
-      name: '@samatech/vue-components',
+      name: '@samatech/st-progressbar',
       fileName: () => outputName,
     },
     rollupOptions: {
@@ -30,10 +30,6 @@ export default defineConfig({
       output: {
         format: 'es',
         dir: 'dist',
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.names[0] == 'vue-components.css') return 'style.css'
-          return assetInfo.names[0]
-        },
       },
     },
   },

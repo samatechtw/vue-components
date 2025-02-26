@@ -1,13 +1,13 @@
 {
-  "name": "@samatech/vue-components-export",
+  "name": "@samatech/st-progressbar",
   "version": "1.0.0",
-  "description": "Self-contained export for @samatech/vue-components",
+  "description": "SamaTech Vue progressbar widget",
   "type": "module",
-  "main": "dist/vue-components-export.es.js",
-  "module": "dist/vue-components-export.es.js",
+  "main": "dist/st-progressbar.es.js",
+  "module": "dist/st-progressbar.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-components.es.js"
+      "import": "./dist/st-progressbar.es.js"
     },
     "./dist/*.css": {
       "import": "./dist/*.css"
@@ -29,16 +29,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "vue": "catalog:",
-    "@samatech/st-input": "workspace:*",
-    "@samatech/st-multiselect": "workspace:*",
-    "@samatech/st-progressbar": "workspace:*"
+    "vue": "catalog:"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "catalog:",
-    "@laynezh/vite-plugin-lib-assets": "catalog:",
-    "vite-plugin-css-injected-by-js": "catalog:",
-    "terser": "catalog:",
     "postcss": "catalog:",
     "postcss-mixins": "catalog:",
     "postcss-nested": "catalog:",

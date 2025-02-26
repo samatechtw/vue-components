@@ -41,6 +41,17 @@
           {{ text }}
         </div>
       </div>
+      <STProgressBar
+        id="p1"
+        :value="progress"
+        :step="1"
+        :showPercent="false"
+        :height="4"
+        :min="1"
+        :max="7"
+        class="progress"
+        @change="progress = $event"
+      />
     </div>
     <div class="footer">
       © SamaTech 2024. All rights reserved. Hosted on
@@ -51,8 +62,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { STMultiselect, STInput } from '@samatech/vue-components'
+import { STMultiselect, STInput, STProgressBar } from '@samatech/vue-components'
 import '@samatech/vue-components/dist/style.css'
+// import { STMultiselect, STInput } from '@samatech/vue-components'
+// import STProgressBar from '@local/STProgressBar.vue'
+
+const progress = ref(3)
 
 const selected = ref()
 
@@ -148,8 +163,6 @@ const complexOptions = [
 </script>
 
 <style lang="postcss">
-@import '/node_modules/@samatech/vue-components/dist/style.css';
-
 html,
 body {
   font-family: Helvetica, sans-serif;
@@ -218,6 +231,9 @@ a {
 .my-input {
   margin-top: 4px;
   width: 100%;
+}
+.progress {
+  margin-top: 58px;
 }
 
 .footer {
