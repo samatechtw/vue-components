@@ -15,6 +15,7 @@
       <div class="min">
         {{ p(min) }}
       </div>
+      <slot name="label" />
       <div class="max">
         {{ p(max) }}
       </div>

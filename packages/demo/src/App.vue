@@ -51,7 +51,9 @@
         :max="7"
         class="progress"
         @change="progress = $event"
-      />
+      >
+        <template #label> Quality </template>
+      </STProgressBar>
     </div>
     <div class="footer">
       © SamaTech 2024. All rights reserved. Hosted on
