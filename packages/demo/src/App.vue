@@ -30,7 +30,7 @@
         v-model="text"
         class="my-input"
         name="my-input"
-        placeholder="My Input"
+        placeholder="Progress Step"
         :clearable="true"
       />
       <div class="values">
@@ -44,11 +44,11 @@
       <STProgressBar
         id="p1"
         :value="progress"
-        :step="1"
+        :step="step"
         :showPercent="false"
         :height="4"
         :min="1"
-        :max="7"
+        :max="100"
         class="progress"
         @change="progress = $event"
       >
@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { STMultiselect, STInput, STProgressBar } from '@samatech/vue-components'
 import '@samatech/vue-components/dist/style.css'
 // import { STMultiselect, STInput } from '@samatech/vue-components'
@@ -78,6 +78,15 @@ const text = ref('')
 const deleteSelect1 = ref(false)
 
 const options1 = ['Option1', 'Option2', 'Option3', 'Delete']
+
+const step = computed(() => {
+  const s = parseInt(text.value)
+  if (isNaN(s)) {
+    return 1
+  } else {
+    return s
+  }
+})
 
 const select1 = (option: string | undefined) => {
   if (option === 'Delete') {
