@@ -12,7 +12,8 @@ jobs:
           fetch-depth: 0
           ref: main
       - uses: ./.github/actions/env-setup
-      - run: npm run build
+      - run: pnpm run build
+      - run: cp ./README.md ./packages/components
       - run: cd packages/components && pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
