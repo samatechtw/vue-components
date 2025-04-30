@@ -21,8 +21,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "oxlint": "0.15.12",
-    "prettier": "3.5.2",
+    "oxlint": "0.16.8",
+    "prettier": "3.5.3",
     "typescript": "catalog:"
   }
 }
