@@ -126,8 +126,7 @@ export const useDropdown = (options: IUseDropdownOptions): IUseDropdown => {
 
   const closeMenu = () => {
     if (!disableClose?.value) {
-      setOpened(false)
-      openChanged?.(opened.value)
+      setMenuOpened(false)
     }
   }
 

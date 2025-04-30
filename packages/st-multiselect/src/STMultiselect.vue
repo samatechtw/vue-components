@@ -195,7 +195,7 @@ const {
     if (open) {
       emit('open')
     } else {
-      closeMenu()
+      emit('close')
     }
   },
 })
@@ -224,14 +224,11 @@ const setToggleRef = (element: Element | ComponentPublicInstance | null) => {
 }
 
 const closeMenu = () => {
-  // TODO -- should this call setMenuOpened(false) ?
   search.value = ''
   searchActive.value = false
-  if (opened.value) {
-    emit('close')
-  }
+  emit('close')
 }
-useKeyListener('Escape', closeMenu)
+useKeyListener('Escape', () => setMenuOpened(false))
 
 const getLabel = (item: T): string => {
   if (typeof item === 'string') {
@@ -300,7 +297,6 @@ const handleKeydown = (e: KeyboardEvent) => {
   } else if (e.key === 'Escape') {
     e.stopPropagation()
     e.preventDefault()
-    closeMenu()
     setMenuOpened(false)
   } else if (e.key === 'ArrowUp') {
     searchIndex.value = (searchIndex.value + optionsLen - 1) % optionsLen

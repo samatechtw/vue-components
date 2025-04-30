@@ -10,6 +10,8 @@
         :options="options1"
         placeholder="Options"
         class="multiselect"
+        @open="opened"
+        @close="closed"
         @select="select1"
       />
       <div class="label">Multiselect search with complex options</div>
@@ -95,6 +97,14 @@ const select1 = (option: string | undefined) => {
     selected1.value = option
   }
   selected.value = option
+}
+
+const opened = () => {
+  console.log('Opened!')
+}
+
+const closed = () => {
+  console.log('Closed!')
 }
 
 const selectedComplex = ref()
