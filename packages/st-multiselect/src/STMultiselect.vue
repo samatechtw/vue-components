@@ -19,7 +19,6 @@
         :isDisabled="disabled"
         name="search"
         class="st-ms-search"
-        type="search"
         autocomplete="off"
         @update:modelValue="updateSearch"
         @keyup.enter.stop.prevent="searchEnter"
@@ -33,7 +32,7 @@
         {{ placeholder ?? '' }}
       </div>
       <div v-if="clearable && value" class="st-ms-clear" @click.stop="clear">
-        <Cross class="st-ms-clear-icon" />
+        <Cross color="black" class="st-ms-clear-icon" />
       </div>
       <div v-if="caret" class="st-ms-caret" :class="{ opened }"></div>
     </div>
@@ -195,6 +194,9 @@ const {
     if (open) {
       emit('open')
     } else {
+      if (!search.value) {
+        searchActive.value = false
+      }
       emit('close')
     }
   },
@@ -368,6 +370,7 @@ $font-text: 'Mulish', Helvetica, sans-serif;
   border: var(--ms-border-width, 1px) solid var(--ms-border-color, #d1d5db);
   .st-ms-search {
     height: 100%;
+    flex-grow: 1;
     .st-input {
       border: none;
       padding: 0;
@@ -401,12 +404,14 @@ $font-text: 'Mulish', Helvetica, sans-serif;
 }
 .st-ms-clear {
   margin-left: auto;
+  cursor: pointer;
 }
 .st-ms-clear-icon {
   display: flex;
   align-items: center;
-  width: 13px;
-  height: 13px;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
 }
 .st-ms-caret {
   font-size: var(--ms-font-size, 1rem);

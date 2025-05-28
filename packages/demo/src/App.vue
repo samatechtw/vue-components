@@ -22,7 +22,7 @@
         labelKey="name"
         valueKey="name"
         :searchable="true"
-        :clearable="false"
+        :clearable="true"
         class="multiselect"
         @select="select2"
         @click.stop
@@ -110,7 +110,7 @@ const closed = () => {
 const selectedComplex = ref()
 
 const select2 = (option: any | undefined) => {
-  selected.value = option.name
+  selected.value = option?.name
   selectedComplex.value = option
 }
 
@@ -145,11 +145,6 @@ const complexOptions = [
     id: 'global-b-setHidden',
     name: 'Set Hidden',
     code: 'sethidden',
-  },
-  {
-    id: 'global-b-viewcounter',
-    name: 'View Counter',
-    code: 'viewcounter',
   },
   {
     id: 'global-b-homeLink',
