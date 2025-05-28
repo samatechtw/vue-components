@@ -1,6 +1,6 @@
 {
   "name": "@samatech/vue-components",
-  "version": "1.3.5",
+  "version": "1.4.0",
   "description": "SamaTech Vue component library",
   "type": "module",
   "main": "dist/vue-components.es.js",
